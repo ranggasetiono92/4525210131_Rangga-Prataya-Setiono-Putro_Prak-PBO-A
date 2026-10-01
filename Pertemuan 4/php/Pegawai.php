@@ -58,7 +58,7 @@ class PegawaiTetap extends Pegawai
      */
     public function hitungGaji(): float
     {
-        return 0;   // ganti
+        return parent::hitungGaji() *(1 +min($this->masaKerjaTahun * self:: TUNJANGAN_PER_TAHUN, self:: TUNJANGAN_MAKSIMUM));
     }
 
     public function jenis(): string { return 'TETAP'; }
@@ -80,3 +80,48 @@ class PegawaiKontrak extends Pegawai
 
 // TODO Langkah 4: buat kelas Dosen (turunan PegawaiTetap, punya tunjangan fungsional)
 //                 dan PegawaiHarian (gaji per hari kerja) di bawah ini.
+class Dosen extends PegawaiTetap
+{
+    private const TUNJANGAN_FUNGSIONAL = 0.10;
+
+    public function __construct(
+        string $nip,
+        string $nama,
+        float $gajiPokok,
+    ) {
+        parent::__construct($nip, $nama, $gajiPokok, 0);
+    }
+
+    public function hitungGaji(): float
+    {
+        return parent::hitungGaji()
+            * (1 + self::TUNJANGAN_FUNGSIONAL);
+    }
+
+    public function jenis(): string
+    {
+        return 'DOSEN';
+    }
+}
+
+class PegawaiHarian extends Pegawai
+{
+    public function __construct(
+        string $nip,
+        string $nama,
+        float $gajiPerHari,
+        private readonly int $hariKerja,
+    ) {
+        parent::__construct($nip, $nama, $gajiPerHari);
+    }
+
+    public function hitungGaji(): float
+    {
+        return parent::hitungGaji() * $this->hariKerja;
+    }
+
+    public function jenis(): string
+    {
+        return 'HARIAN';
+    }
+}
