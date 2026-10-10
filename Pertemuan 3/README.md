@@ -6,8 +6,8 @@
 | **NPM** | 4525210131 |
 | **Kelas** | A |
 | **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
-| **Pertemuan** | [Pertemuan 3] |
-| **Tanggal** | [17 September 2026] 
+| **Pertemuan** | Pertemuan 3 |
+| **Tanggal** | 17 September 2026 |
 | **Dosen Pengampu** | Adi Wahyu Pribadi, S.Si., M.Kom |
 
 ---
