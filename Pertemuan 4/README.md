@@ -1,61 +1,116 @@
-<img width="608" height="457" alt="image" src="https://github.com/user-attachments/assets/0af7038f-da26-4435-a281-2de4bbaf4660" /># LAPORAN PRAKTIKUM PBO A - PERTEMUAN 4
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
 
-**Nama :** Rangga Prataya Setiono Putro
-**NPM :** 4525210131
-**Mata Kuliah :** Praktikum Pemrograman Berorientasi Objek
+| Informasi Praktikan | Keterangan |
+| :--- | :--- |
+| **Nama** |  Rangga Prataya Setiono Putro |
+| **NPM** |  4525210131 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [Pertemuan 4 |
+| **Tanggal** | [24 September 2026] |
 
-## Materi
+---
 
-## `Pegawai Menggunakan Java & PHP`
+## 1. Implementasi Java
 
-`Materi : Inheritance (Pewarisan)`
+**Penjelasan Kode:**
+> Struktur kelas berbasis pewarisan (inheritance) ini dirancang untuk merepresentasikan hierarki objek dengan memanfaatkan kelas abstrak sebagai fondasi bersama. Kelas induk mendefinisikan atribut universal yang imutabel serta perilaku dasar—seperti validasi agar data pokok tidak bernilai negatif dan implementasi method abstrak untuk mengidentifikasi jenis entitas—sementara kelas-kelas turunannya memperluas fungsionalitas tersebut melalui spesialisasi atribut tambahan, delegasi konstruktor via super, serta modifikasi logika kalkulasi (method overriding) sesuai karakteristik masing-masing sub-entitas tanpa mengubah struktur inti di atasnya.
 
-## Screenshot Coding Main.java
-<img width="449" height="431" alt="main java" src="https://github.com/user-attachments/assets/2e15d3eb-3dbf-4f4c-a7ad-55b45194d354" />
+### 1.1. File: `Pegawai.java`
 
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](image-1.png)
 
-## Screenshot Coding Pegawai.java
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
+![alt text](image.png)
 
-<img width="635" height="458" alt="pegawai java" src="https://github.com/user-attachments/assets/7d393ea0-87eb-4af1-9d07-7e844097e2a9" />
+### 1.2. File: `Pegawaikontrak.java`
 
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](image-2.png)
 
-## Screenshot Coding PegawaiKontrak.java
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
+<img ![alt text](pegawaikontrak.png)>
 
-<img width="593" height="290" alt="pegawaikontrak" src="https://github.com/user-attachments/assets/675e6d17-4483-4c70-adc3-e981280250cf" />
+## 1.3. File: `PegawaiTetap.java`
 
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](image-3.png)
 
-## Screenshot Coding PegawaiHarian.java
+**Bukti Eksekusi (Screenshot):**
+* **After** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](<pegawaitetap java.png>)
 
-<img width="557" height="258" alt="pegawaiharian java" src="https://github.com/user-attachments/assets/10af0d78-dafd-41c3-abb6-ea11bf06c698" />
+### 1.4. File: `Main.java`
 
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](image-4.png)
 
-## Screenshot Coding PegawaiTetap.java
-
-<img width="608" height="457" alt="pegawaitetap java" src="https://github.com/user-attachments/assets/5b8f2888-fa1f-4ad2-abd4-29c7c8fadad0" />
-
-
-## Screenshot Coding Dosen.java
-
-<img width="643" height="386" alt="dosen java" src="https://github.com/user-attachments/assets/464b3df8-4032-40c5-a3df-b89360de21a4" />
-
-
-## Screenshot Hasil Running Java
-
-<img width="678" height="164" alt="run java" src="https://github.com/user-attachments/assets/b3158040-50d5-4448-86d3-f00d401e0289" />
-
-
-## Screenshot Coding Main.php
-<img width="451" height="348" alt="main php" src="https://github.com/user-attachments/assets/f4a101da-3ba7-4d17-9f29-2ac700a8c580" />
-
-
-## Screenshot Coding Pegawai.php
-
-<img width="462" height="477" alt="php1" src="https://github.com/user-attachments/assets/8d7d29f2-3be8-4b1a-937b-5940e10c5d05" />
-<img width="439" height="444" alt="php2" src="https://github.com/user-attachments/assets/dbab58f5-3a3e-484f-a5f1-60e16ee98d6e" />
-<img width="449" height="280" alt="php3" src="https://github.com/user-attachments/assets/c82ddb7b-eb15-491c-b752-3b197f12406a" />
-
-
-## Screenshot Hasil Running PHP
+**Bukti Eksekusi (Screenshot):**
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
+![alt text](<main java.png>)
 
 
-<img width="464" height="139" alt="run php" src="https://github.com/user-attachments/assets/a3afb680-fbd3-44af-8d77-322576280f2c" />
+# 1.5. File: `PegawaiHarian.java`
+**Penjelasan Kode:**
+>Penambahan kelas `PegawaiHarian` dalam hierarki pewarisan ini bertujuan untuk mengakomodasi model perhitungan kompensasi yang berbeda dari pegawai tetap atau kontrak, di mana upah dihitung berdasarkan akumulasi satuan waktu kerja (seperti jumlah hari masuk) dikalikan dengan tarif dasar harian. Dengan memanfaatkan kelas abstrak induk, `PegawaiHarian` dapat menggunakan kembali atribut universal yang sudah ada sekaligus menerapkan spesialisasi kalkulasi gajinya sendiri melalui mekanisme *method overriding* tanpa harus mengubah struktur dasar sistem secara keseluruhan.
+
+**Bukti Eksekusi (Screenshot):**
+* **Penambahan** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](<pegawaiharian java.png>)
+
+# 1.6. File: `dosen.java`
+**Penjelasan Kode:**
+>Penambahan kelas `Dosen` dalam hierarki pewarisan ini bertujuan untuk merepresentasikan peran pengajar tetap yang memiliki struktur kompensasi khusus, yaitu berupa tambahan tunjangan fungsional di luar gaji pokok dan tunjangan masa kerja yang diperoleh dari kelas induknya (`PegawaiTetap`). Dengan memanfaatkan pewarisan, kelas `Dosen` dapat menggunakan kembali atribut dan logika yang sudah ada sekaligus melakukan spesialisasi perhitungan gaji melalui mekanisme *method overriding* (`hitungGaji()`) dan identifikasi jenis entitas (`jenis()`) tanpa harus menulis ulang kode dasar pegawai secara keseluruhan.
+
+**Bukti Eksekusi (Screenshot):**
+* **Penambahan** *(Kondisi awal / Kesalahan kompilasi)*:
+![alt text](<dosen java.png>)
+
+### Output
+**Output Program:**
+![alt text](<run java-1.png>)
+
+---
+
+## 2. Implementasi PHP
+
+**Penjelasan Kode:**
+> [Isi Penjelasan.]
+
+### 2.1. File: `Pegawai.php`
+
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Galat logika)*:
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
+![alt text](php1.png)
+![alt text](php2.png)
+![alt text](php3.png)
+
+
+### 2.3. File: `main.php`
+
+**Bukti Eksekusi (Screenshot):**
+* **Before** *(Kondisi awal / Galat logika)*:
+![alt text](image-8.png)
+
+* **After** *(Kondisi akhir / Eksekusi berhasil)*:
+![alt text](image-9.png)
+
+
+
+### Output
+**Output Program:**
+![alt text](image-10.png)
+
+---
+
+## 3. Kesimpulan
+> Kesimpulan dari keseluruhan implementasi program berbasis Java dan php pada sesi ini adalah bahwa penerapan pilar Pemrograman Berorientasi Objek (OOP) seperti pewarisan (inheritance) dan polimorfisme berhasil membangun struktur sistem yang fleksibel serta terorganisir dengan baik. Kelas abstrak bertindak sebagai fondasi utama yang menangani atribut universal dan validasi data dasar, sementara berbagai kelas turunan memperluas fungsionalitas tersebut untuk mengakomodasi aturan bisnis dan model perhitungan kompensasi yang spesifik. Melalui mekanisme method overriding dan polimorfisme berbasis array kelas induk, program mampu memproses kumpulan data yang beragam secara seragam dan dinamis tanpa harus mengubah struktur inti yang sudah ditetapkan.
