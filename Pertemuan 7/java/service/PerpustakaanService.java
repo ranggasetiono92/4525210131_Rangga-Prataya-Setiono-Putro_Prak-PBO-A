@@ -1,7 +1,9 @@
 package service;
 
-import model.Buku;
 import java.util.ArrayList;
+
+import model.Buku;
+
 /**
  * Kerangka lapisan layanan.
  * Pada sesi 7 cukup struktur dan tanda tangan method; isinya boleh minimal.
@@ -15,37 +17,31 @@ public class PerpustakaanService {
     // TODO 1: tentukan bagaimana layanan ini menyimpan koleksi dan anggota.
     //         Agregasi atau komposisi? Tuliskan alasannya di analisis.md,
     //         lalu wujudkan keputusan itu di sini.
-    private ArrayList<Buku> bukuList = new ArrayList<>();
-    // Sebutkan make jelas relasi apa
+    private ArrayList<Buku> buku = new ArrayList<>();
 
     public void tambahKoleksi(Buku buku) {
+        this.buku.add(buku);
         // TODO 2
-        this.bukuList.add(buku);
     }
 
     public Buku cariKoleksi(String nomorInduk) {
-        // TODO 3
-        for (Buku buku : this.bukuList) {
+        for (Buku buku : this.buku){
             if (buku.getNomorInduk().equals(nomorInduk)) {
-                return buku;
+                return  buku;
             }
         }
+        // TODO 3
         return null;
     }
-    // TODO 4: terapkan aturan bisnis dari deskripsi-kebutuhan.md.
-    //           Aturan lengkapnya akan disempurnakan pada sesi 10.
-    //Contoh kerangka Logika:
-    // 1. Cari Anggota berdasarkan nomorAnggota
-    // 2. Cari Buku berdasarkan nomorInduk
-    // 3. Cek apakah stok tersedia / tidak sedang dipinjam
-    // 4. Kurangi stok atau ubah status peminjaman, sesuai kebutuhan
 
     public void pinjam(String nomorAnggota, String nomorInduk) {
+        System.out.println("Anggota" + nomorAnggota + "meminjam buku" + nomorInduk);
         // TODO 4: terapkan aturan bisnis dari deskripsi-kebutuhan.md.
         //         Aturan lengkapnya akan disempurnakan pada sesi 10.
     }
 
     public void kembalikan(String nomorAnggota, String nomorInduk) {
+        System.out.println("Anggota:" +nomorAnggota + "mengembalikan buku" +nomorInduk);
         // TODO 5
     }
 }
