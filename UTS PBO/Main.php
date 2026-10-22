@@ -2,12 +2,19 @@
 
 require_once "Obat.php";
 require_once "Pelanggan.php";
+<<<<<<< HEAD
 require_once "Transaksi.php";
 require_once "Status.php";
 
 
 $paracetamol = new ObatBebas("Bodrekkkkk", 5000, 20);
 $vitaminC = new ObatBebas("Vitamin C", 12000, 10);
+=======
+require_once "Transanksi.php";
+
+$paracetamol = new ObatBebas("Bodrekkkkk", 5000, 20);
+$vitaminC = new ObatKeras("Vitamin C", 12000, 10);
+>>>>>>> c620938 (Tugas PBO)
 $amoxicillin = new ObatKeras("Minyak Telon", 15000, 5);
 
 $daftarObat = [$paracetamol, $vitaminC, $amoxicillin];
@@ -20,9 +27,16 @@ echo "Jumlah obat: " . Obat::$jumlahObat . "\n\n";
 
 $budi = new Pelanggan("Budi", "08123456789");
 $sari = new Pelanggan("Sari");
+<<<<<<< HEAD
 
 $t1 = new Transaksi($budi, $paracetamol, 3);
 $t2 = new Transaksi($sari, $amoxicillin, 2);
+=======
+$budi = new pelanggan ("budi");
+
+$t1 = new Transaksi($budi, $paracetamol, 3);
+$t2 = new Transaksi($sari, $vitaminC, 2);
+>>>>>>> c620938 (Tugas PBO)
 $t3 = new Transaksi($budi, $amoxicillin, 10);
 
 echo "=== Transaksi ===\n";
