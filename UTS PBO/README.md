@@ -51,39 +51,38 @@
 > Program utama yang membuat objek obat dan pelanggan, menjalankan transaksi, serta menampilkan hasilnya.
 
 **Screenshot Kode:**
-![SS Code Main.php](Dokumentasi/main.png)
+![alt text](image-8.png)
 
 ### 1.2. File: `Obat.php`
 **Penjelasan Kode:**
 > Mengelola data obat, harga, stok, jenis obat, dan perhitungan harga serta biaya resep untuk obat keras.
 
 **Screenshot Kode:**
-![SS Code Obat.php](Dokumentasi/obat.png)
-
+![alt text](image-1.png)
 ### 1.3. File: `Pelanggan.php`
 **Penjelasan Kode:**
 > Menyimpan data pelanggan berupa nama dan nomor telepon menggunakan konsep class, constructor, dan encapsulation. 
 
 **Screenshot Kode:**
-![SS Code Pelanggan.php](Dokumentasi/Pelanggan.png)
+![alt text](image-2.png)
 
 ### 1.4. File: `Status.php`
 **Penjelasan Kode:**
 > Menggunakan enum untuk menentukan status pembayaran, yaitu Lunas dan Belum Bayar.
 
 **Screenshot Kode:**
-![SS Code Status.php](Dokumentasi/Status.png)
+![alt text](image-3.png)
 
 ### 1.5. File: `Transaksi.php`
 **Penjelasan Kode:**
 > Mengelola transaksi pembelian, memeriksa ketersediaan stok, memperbarui status pembayaran, dan mencetak detail transaksi.
 
 **Screenshot Kode:**
-![SS Code Transaksi.php](Dokumentasi/Transaksi.png)
+![alt text](image-4.png)
 
 ### Output
 **Hasil Running Program (Java):**
-![Output Java](Dokumentasi/output.png)
+![alt text](image-6.png)
 
 ---
 
