@@ -1,0 +1,26 @@
+@startuml
+title Sequence Diagram - Mencatat Setoran Sampah
+actor Petugas
+participant SetoranController
+participant SetoranService
+participant NasabahRepository
+participant PetugasRepository
+participant Setoran
+participant SetoranRepository
+
+Petugas -> SetoranController : POST /api/setoran
+SetoranController -> SetoranService : catat(nasabahId, petugasId, items)
+SetoranService -> NasabahRepository : findById(nasabahId)
+NasabahRepository --> SetoranService : Nasabah
+SetoranService -> PetugasRepository : findById(petugasId)
+PetugasRepository --> SetoranService : Petugas
+SetoranService -> Setoran : new Setoran(...)
+loop setiap item
+  SetoranService -> Setoran : tambahItem(jenis, beratKg)
+  note right: JenisSampah.hitungNilai()\nmelempar BeratTidakValidException\nbila berat <= 0
+end
+SetoranService -> NasabahRepository : save(nasabah + saldo)
+SetoranService -> SetoranRepository : save(setoran)
+SetoranService --> SetoranController : Setoran
+SetoranController --> Petugas : 201 Created (JSON)
+@enduml

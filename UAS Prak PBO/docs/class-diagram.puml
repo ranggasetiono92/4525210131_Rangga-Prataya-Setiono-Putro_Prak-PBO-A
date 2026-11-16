@@ -1,0 +1,88 @@
+@startuml
+title Class Diagram - Bank Sampah
+skinparam classAttributeIconSize 0
+
+abstract class Pengguna {
+  - id: String
+  - nama: String
+  + getPeran(): String
+}
+class Nasabah {
+  - saldo: long
+  + tambahSaldo(jumlah: long)
+  + kurangiSaldo(jumlah: long)
+}
+class Petugas {
+  - shift: String
+}
+Pengguna <|-- Nasabah
+Pengguna <|-- Petugas
+
+enum JenisSampah {
+  PLASTIK
+  KERTAS
+  KACA
+  LOGAM
+  ELEKTRONIK
+  + hitungNilai(beratKg: double): long
+  + berhakBonus(beratKg: double): boolean
+}
+class ItemSetoran {
+  - beratKg: double
+  - nilai: long
+}
+class Setoran {
+  - id: String
+  - tanggal: LocalDateTime
+  + tambahItem(jenis, beratKg)
+  + getTotalNilai(): long
+}
+Setoran *-- "1..*" ItemSetoran : komposisi
+ItemSetoran --> JenisSampah
+
+interface MetodePencairan {
+  + getNama(): String
+  + hitungBiaya(nominal: long): long
+}
+class PencairanTunai
+class PencairanEWallet
+MetodePencairan <|.. PencairanTunai
+MetodePencairan <|.. PencairanEWallet
+
+interface NasabahRepository
+interface PetugasRepository
+interface SetoranRepository
+class InMemoryNasabahRepository
+class InMemoryPetugasRepository
+class InMemorySetoranRepository
+NasabahRepository <|.. InMemoryNasabahRepository
+PetugasRepository <|.. InMemoryPetugasRepository
+SetoranRepository <|.. InMemorySetoranRepository
+
+class NasabahService
+class SetoranService
+class PencairanService
+NasabahService --> NasabahRepository
+SetoranService --> NasabahRepository
+SetoranService --> PetugasRepository
+SetoranService --> SetoranRepository
+SetoranService ..> Setoran : membuat
+PencairanService --> NasabahRepository
+PencairanService --> MetodePencairan
+
+class NasabahController
+class SetoranController
+class PencairanController
+NasabahController --> NasabahService
+SetoranController --> SetoranService
+PencairanController --> PencairanService
+
+class DataTidakDitemukanException
+class SaldoTidakCukupException
+class BeratTidakValidException
+RuntimeException <|-- DataTidakDitemukanException
+RuntimeException <|-- SaldoTidakCukupException
+RuntimeException <|-- BeratTidakValidException
+Nasabah ..> SaldoTidakCukupException
+JenisSampah ..> BeratTidakValidException
+@enduml
